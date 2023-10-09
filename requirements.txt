@@ -1,2 +1,8 @@
 fastapi
 uvicorn[standard]
+pyautogen
+langchain
+langchain-experimental
+llama-index
+docker
+openai
