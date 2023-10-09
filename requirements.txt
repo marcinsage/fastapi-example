@@ -6,3 +6,5 @@ langchain-experimental
 llama-index
 docker
 openai
+SQLAlchemy
+sqlalchemy-bigquery
