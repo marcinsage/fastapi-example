@@ -8,3 +8,4 @@ docker
 openai
 SQLAlchemy
 sqlalchemy-bigquery
+pyodbc
