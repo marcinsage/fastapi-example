@@ -1,11 +1,20 @@
-FROM python:3.9
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim-buster
 
-WORKDIR /code
- 
-COPY ./requirements.txt /code/requirements.txt
+# Set the working directory in the container to /app
+WORKDIR /app
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+# Add the current directory contents into the container at /app
+ADD . /app
 
-COPY ./app /code/app
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "3000"]
+# Install unixODBC package
+RUN apt-get update && apt-get install -y unixODBC
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
