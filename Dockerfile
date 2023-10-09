@@ -2,8 +2,8 @@ FROM python:3.9-slim-buster
 
 WORKDIR /code
 
-# Install unixODBC and g++ packages
-RUN apt-get update && apt-get install -y unixODBC g++
+# Install unixodbc and g++ packages
+RUN apt-get update && apt-get install -y unixodbc g++
 
 COPY ./requirements.txt /code/requirements.txt
 
