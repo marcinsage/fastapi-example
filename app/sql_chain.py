@@ -31,7 +31,7 @@ config_list = autogen.config_list_from_json(
     },
 )
 
-service_account_file = "utils/service-account-key.json"
+service_account_file = os.getenv('SERVICE_ACCOUNT_FILE')
 project = "source-398315"
 dataset = "facebook_ads"
 llm = ChatOpenAI(temperature=0, verbose=True, model="gpt-4")
